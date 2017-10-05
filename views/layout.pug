@@ -5,3 +5,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    block side_tables
+      if tables
+        ul
+        each table in tables
+          li
+            a(href=`/tables/${table.Tables_in_eikaiwa}`) #{table.Tables_in_eikaiwa}

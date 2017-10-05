@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Results
+  table
+    tr
+      each key in Object.keys(results[0])
+        th #{key}
+    each result in results
+      tr
+        - let s = Object.values(result)
+        each x in s
+          td #{x}

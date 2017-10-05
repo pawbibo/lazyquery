@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2= title
+  form(action="/table/query" method="GET")
+    ul(style="list-style: none")
+      each def in table_def
+        li
+          input(type="checkbox" id=def.Field value=def.Field name="fields")
+          label(for=def.Field) #{def.Field}
+    input(type="hidden" name="table" value=title)
+    input(type="submit" value="Run")
